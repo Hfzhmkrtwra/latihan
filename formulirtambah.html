@@ -31,7 +31,7 @@
   <a href="index.html">Kembali ke daftar bunga</a>
 
   <script type="module">
-    import { tambahbunga } from "./main.js";
+    import { tambahBunga } from "./main.js";
 
     $(document).ready(async function() {
       //ambil data dari formulir
@@ -39,10 +39,10 @@
       $("#tombolsimpan").click(async function(event) {
         event.preventDefault()
         
-        let nama = $("#inputnama").val(  )
+        let nama = $("#inputnama").val()
 
 
-        await tambahbunga(nama)
+        await tambahBunga(nama)
         window.location.href = "index.html"
 
       })

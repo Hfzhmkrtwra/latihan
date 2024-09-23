@@ -43,7 +43,7 @@ export async function ambilDaftarBunga() {
   return hasilKueri;
 }
 
-export async function tambahbunga (nama, bunga) {
+export async function tambahBunga (nama, bunga) {
   try {
     // menyimpan data ke firebase
     const refDokumen = await addDoc(collection(basisdata, "namabunga"), {
@@ -55,6 +55,6 @@ export async function tambahbunga (nama, bunga) {
     console.log('berhasil menyimpan data bunga')
   } catch (error) {
     // menampilkan pesan gagal 
-    console.log('gagal menyimpan data siswa'+ error)
+    console.log('gagal menyimpan data bunga'+ error)
   }
 }
