@@ -39,11 +39,10 @@
       $("#tombolsimpan").click(async function(event) {
         event.preventDefault()
         
-        let nama = $("#inputnama").val()
-        let alamat = $("#inputbunga").val()
+        let nama = $("#inputnama").val(  )
 
 
-        await tambahbunga(nama, alamat)
+        await tambahbunga(nama)
         window.location.href = "index.html"
 
       })

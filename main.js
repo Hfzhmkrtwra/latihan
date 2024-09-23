@@ -27,7 +27,7 @@ const aplikasi = initializeApp(firebaseConfig)
 const basisdata = getFirestore(aplikasi)
 
 export async function ambilDaftarBunga() {
-  const refDokumen = collection(basisdata, "bunga");
+  const refDokumen = collection(basisdata, "namabunga");
   const kueri = query(refDokumen, orderBy("nama"));
   const cuplikanKueri = await getDocs(kueri);
   
@@ -35,8 +35,8 @@ export async function ambilDaftarBunga() {
   cuplikanKueri.forEach((dokumen) => {
     hasilKueri.push({
       id: dokumen.id,
-      nama: dokumen.data().nama,
-      bunga: dokumen.data().bunga
+      nama: dokumen.data().nama
+     
     })
   })
   
@@ -46,9 +46,9 @@ export async function ambilDaftarBunga() {
 export async function tambahbunga (nama, bunga) {
   try {
     // menyimpan data ke firebase
-    const refDokumen = await addDoc(collection(basisdata, "bunga"), {
-    nama: nama, 
-    bunga: bunga
+    const refDokumen = await addDoc(collection(basisdata, "namabunga"), {
+    nama: nama
+   
     })
     
     // menampilkan pesan berhasil
